@@ -1,29 +1,15 @@
 {
   "version": 2,
   "name": "ai-communication-skills-coach",
-  "builds": [
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "framework": "vite",
+  "rewrites": [
     {
-      "src": "package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "dist"
-      }
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
   ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/index.html"
-    }
-  ],
-  "env": {
-    "VITE_SUPABASE_URL": "@supabase-url",
-    "VITE_SUPABASE_ANON_KEY": "@supabase-anon-key",
-    "VITE_OPENAI_API_KEY": "@openai-api-key",
-    "VITE_APP_NAME": "AI Communication Skills Coach",
-    "VITE_APP_VERSION": "1.0.0",
-    "VITE_APP_ENVIRONMENT": "production"
-  },
   "headers": [
     {
       "source": "/(.*)",
